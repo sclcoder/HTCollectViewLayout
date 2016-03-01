@@ -14,6 +14,11 @@
 		E31B7E021B7B50A800B8A9D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31B7E011B7B50A800B8A9D3 /* Images.xcassets */; };
 		E31B7E051B7B50A800B8A9D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31B7E031B7B50A800B8A9D3 /* LaunchScreen.xib */; };
 		E31B7E111B7B50A800B8A9D3 /* collectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E31B7E101B7B50A800B8A9D3 /* collectionViewTests.m */; };
+		E3B215991B7C2EC0008C5ED0 /* HTLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B215981B7C2EC0008C5ED0 /* HTLineLayout.m */; };
+		E3B215A01B7C3CFC008C5ED0 /* HTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B2159E1B7C3CFC008C5ED0 /* HTCollectionViewCell.m */; };
+		E3B215A11B7C3CFC008C5ED0 /* HTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B2159F1B7C3CFC008C5ED0 /* HTCollectionViewCell.xib */; };
+		E3B215A71B7CA1D6008C5ED0 /* HTCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B215A61B7CA1D6008C5ED0 /* HTCircle.m */; };
+		E3B215AA1B7CA48E008C5ED0 /* HTStack.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B215A91B7CA48E008C5ED0 /* HTStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,15 @@
 		E31B7E0A1B7B50A800B8A9D3 /* collectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = collectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31B7E0F1B7B50A800B8A9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E31B7E101B7B50A800B8A9D3 /* collectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = collectionViewTests.m; sourceTree = "<group>"; };
+		E3B215971B7C2EC0008C5ED0 /* HTLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLineLayout.h; sourceTree = "<group>"; };
+		E3B215981B7C2EC0008C5ED0 /* HTLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLineLayout.m; sourceTree = "<group>"; };
+		E3B2159D1B7C3CFC008C5ED0 /* HTCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTCollectionViewCell.h; path = ../HTCollectionViewCell.h; sourceTree = "<group>"; };
+		E3B2159E1B7C3CFC008C5ED0 /* HTCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTCollectionViewCell.m; path = ../HTCollectionViewCell.m; sourceTree = "<group>"; };
+		E3B2159F1B7C3CFC008C5ED0 /* HTCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HTCollectionViewCell.xib; path = ../HTCollectionViewCell.xib; sourceTree = "<group>"; };
+		E3B215A51B7CA1D6008C5ED0 /* HTCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCircle.h; sourceTree = "<group>"; };
+		E3B215A61B7CA1D6008C5ED0 /* HTCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCircle.m; sourceTree = "<group>"; };
+		E3B215A81B7CA48E008C5ED0 /* HTStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTStack.h; sourceTree = "<group>"; };
+		E3B215A91B7CA48E008C5ED0 /* HTStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +99,17 @@
 				E31B7DF91B7B50A800B8A9D3 /* AppDelegate.m */,
 				E31B7DFB1B7B50A800B8A9D3 /* ViewController.h */,
 				E31B7DFC1B7B50A800B8A9D3 /* ViewController.m */,
+				E3B2159D1B7C3CFC008C5ED0 /* HTCollectionViewCell.h */,
+				E3B2159E1B7C3CFC008C5ED0 /* HTCollectionViewCell.m */,
+				E3B2159F1B7C3CFC008C5ED0 /* HTCollectionViewCell.xib */,
 				E31B7DFE1B7B50A800B8A9D3 /* Main.storyboard */,
 				E31B7E011B7B50A800B8A9D3 /* Images.xcassets */,
+				E3B215971B7C2EC0008C5ED0 /* HTLineLayout.h */,
+				E3B215981B7C2EC0008C5ED0 /* HTLineLayout.m */,
+				E3B215A81B7CA48E008C5ED0 /* HTStack.h */,
+				E3B215A91B7CA48E008C5ED0 /* HTStack.m */,
+				E3B215A51B7CA1D6008C5ED0 /* HTCircle.h */,
+				E3B215A61B7CA1D6008C5ED0 /* HTCircle.m */,
 				E31B7E031B7B50A800B8A9D3 /* LaunchScreen.xib */,
 				E31B7DF41B7B50A800B8A9D3 /* Supporting Files */,
 			);
@@ -199,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B215A11B7C3CFC008C5ED0 /* HTCollectionViewCell.xib in Resources */,
 				E31B7E001B7B50A800B8A9D3 /* Main.storyboard in Resources */,
 				E31B7E051B7B50A800B8A9D3 /* LaunchScreen.xib in Resources */,
 				E31B7E021B7B50A800B8A9D3 /* Images.xcassets in Resources */,
@@ -222,6 +246,10 @@
 				E31B7DFD1B7B50A800B8A9D3 /* ViewController.m in Sources */,
 				E31B7DFA1B7B50A800B8A9D3 /* AppDelegate.m in Sources */,
 				E31B7DF71B7B50A800B8A9D3 /* main.m in Sources */,
+				E3B215AA1B7CA48E008C5ED0 /* HTStack.m in Sources */,
+				E3B215A01B7C3CFC008C5ED0 /* HTCollectionViewCell.m in Sources */,
+				E3B215991B7C2EC0008C5ED0 /* HTLineLayout.m in Sources */,
+				E3B215A71B7CA1D6008C5ED0 /* HTCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: chunlei sun (6YFR93L5P3)";
 				INFOPLIST_FILE = collectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +445,7 @@
 				E31B7E161B7B50A800B8A9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E31B7E171B7B50A800B8A9D3 /* Build configuration list for PBXNativeTarget "collectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +454,7 @@
 				E31B7E191B7B50A800B8A9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
