@@ -34,9 +34,14 @@ static const CGFloat HTItemHW = 100;
     return YES;
 }
 
-
-// 每次手动滚动调用一次 --- 设置scroll停止位置
-// proposedContentOffset 滚动停止时point 这个点在左上角
+/**
+ *  控制collectionView停止滚动时所停留的最终位置
+ *
+ *  @param proposedContentOffset 默认情况下collectionView停止滚动 contenoffset的值
+ *  @param velocity              速度
+ *
+ *  @return collectionView停止滚动时最终contentoffset的值
+ */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
     
     NSLog(@"targetContentOffsetForProposedContentOffset");
@@ -51,8 +56,8 @@ static const CGFloat HTItemHW = 100;
     centerX = lastRect.origin.x + self.collectionView.frame.size.width * 0.5;
     
     // 找出“最终”显示的item的attribute 与centerX对比
-    // 返回rect中的cells的布局属性
-    NSArray *visibleArray = [self layoutAttributesForElementsInRect:lastRect];
+    // [super layoutAttributesForElementsInRect] 这里调用super的方法即可 如果self 会多算一遍
+    NSArray *visibleArray = [super layoutAttributesForElementsInRect:lastRect];
 
     CGFloat adjustOffsetx = CGFLOAT_MAX;
     
@@ -69,16 +74,21 @@ static const CGFloat HTItemHW = 100;
 }
 
 
-// 2. 设置item的layoutAttributes --- 此方法在滚动时会频繁调用
-// 当bounds改变时“需要”调用此方法
-// 这个方法在一开始就会调用 返回全部item的attribute
+/**
+ *  设置collectionView 所有元素的布局参数
+ *
+ *  @param rect 系统默认调用该方法时rect时预估值 比屏幕要大一些（预估用户会左右上下滑动等）
+ *
+ *  @return 存放布局参数的数组
+ */
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
     
-    NSLog(@"layoutAttributesForElementsInRect");
+//    NSLog(@"%@",NSStringFromCGRect(rect));
     // 利用父类返回的Attributes数组数据  修改数据让其放大
     
     NSArray *array =  [super layoutAttributesForElementsInRect:rect];
-    
+   
+    // 因为默认的rect会比较大 这里放大处理可以只处理显示的cell
     // 1.计算显示的的区域
     CGRect visibleRect ;
     visibleRect.origin = self.collectionView.contentOffset;
@@ -102,7 +112,6 @@ static const CGFloat HTItemHW = 100;
         
         attribute.transform = CGAffineTransformMakeScale(scale, scale);
     }
-    // 放大效果后有可能有的cell就不在rect中了 需要重新设置
     return array;
 }
 

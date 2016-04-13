@@ -61,33 +61,32 @@
         
         // zIndex越大,就越在上面
         attribute.zIndex = self.cellCount - indexPath.item;
-//
-//        return attribute;
     
-    NSArray *angle = @[@(-1),@(-0.2),@0,@(0.2),@1];
     
-    if (indexPath.item >= 5) {
-        
-        attribute.hidden = YES;
-        
-    }else {
-        // 设置attribute
-        
-        attribute.size = CGSizeMake(100, 100);
-        
-        CGPoint tempCenter;
-        tempCenter.x  = self.center.x + arc4random_uniform(100);
-        tempCenter.y  = self.center.y + arc4random_uniform(50);
-        attribute.center =  tempCenter;
-        
-        
-        attribute.center = self.center;
-        
-        attribute.transform = CGAffineTransformMakeRotation([angle[indexPath.item] floatValue]);
-        
-        // zIndex越大,就越在上面
-        attribute.zIndex = self.cellCount - indexPath.item;
-    }
+//    NSArray *angle = @[@(-1),@(-0.2),@0,@(0.2),@1];
+//    
+//    if (indexPath.item >= 5) {
+//        
+//        attribute.hidden = YES;
+//        
+//    }else {
+//        // 设置attribute
+//        
+//        attribute.size = CGSizeMake(100, 100);
+//        
+//        CGPoint tempCenter;
+//        tempCenter.x  = self.center.x + arc4random_uniform(100);
+//        tempCenter.y  = self.center.y + arc4random_uniform(50);
+//        attribute.center =  tempCenter;
+//        
+//        
+//        attribute.center = self.center;
+//        
+//        attribute.transform = CGAffineTransformMakeRotation([angle[indexPath.item] floatValue]);
+//        
+//        // zIndex越大,就越在上面
+//        attribute.zIndex = self.cellCount - indexPath.item;
+//    }
     return attribute;
 }
 
@@ -103,8 +102,6 @@
         
         // 生成indexPath
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
-        
-        [self layoutAttributesForItemAtIndexPath:indexPath];
         
         UICollectionViewLayoutAttributes *attribute = [self layoutAttributesForItemAtIndexPath:indexPath];
         [array addObject:attribute];
