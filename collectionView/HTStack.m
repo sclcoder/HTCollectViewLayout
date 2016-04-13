@@ -20,7 +20,7 @@
 @implementation HTStack
 
 
-// 做一些初始化工作
+// Tells the layout object to update the current layout.
 - (void)prepareLayout{
 
     [super prepareLayout];
@@ -45,21 +45,22 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    NSLog(@"layoutAttributesForItemAtIndexPath");
+
     UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
         // 设置attribute
         attribute.size = CGSizeMake(100, 100);
         
-//        CGPoint tempCenter;
-//        tempCenter.x  = arc4random_uniform(400);
-//        tempCenter.y  = arc4random_uniform(200);
-//        attribute.center =  tempCenter;
-//    
-//        attribute.transform = CGAffineTransformMakeRotation(arc4random_uniform(20));
-//        
-//        // zIndex越大,就越在上面
-//        attribute.zIndex = self.cellCount - indexPath.item;
+        CGPoint tempCenter;
+        tempCenter.x  = arc4random_uniform(400);
+        tempCenter.y  = arc4random_uniform(200);
+        attribute.center =  tempCenter;
+    
+        attribute.transform = CGAffineTransformMakeRotation(arc4random_uniform(20));
+        
+        // zIndex越大,就越在上面
+        attribute.zIndex = self.cellCount - indexPath.item;
 //
 //        return attribute;
     
@@ -74,10 +75,10 @@
         
         attribute.size = CGSizeMake(100, 100);
         
-//        CGPoint tempCenter;
-//        tempCenter.x  = self.center.x + arc4random_uniform(100);
-//        tempCenter.y  = self.center.y + arc4random_uniform(50);
-//        attribute.center =  tempCenter;
+        CGPoint tempCenter;
+        tempCenter.x  = self.center.x + arc4random_uniform(100);
+        tempCenter.y  = self.center.y + arc4random_uniform(50);
+        attribute.center =  tempCenter;
         
         
         attribute.center = self.center;

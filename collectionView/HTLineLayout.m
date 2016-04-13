@@ -10,6 +10,11 @@
 
 static const CGFloat HTItemHW = 100;
 
+
+/**
+    核心方法:  1.实现cell的放大--即改变cell的layoutAttributes 在layoutAttributesForElementsInRect方法中实现
+              2.指定某个cell居中显示--即控制contentView的contentOffset通过layoutAttributesForElementsInRect方法中返回的cells微调contentOffset(类似分页)
+ */
 @implementation HTLineLayout
 
 - (instancetype)init{
@@ -30,24 +35,29 @@ static const CGFloat HTItemHW = 100;
 }
 
 
-// 对齐   每次滚动调用一次
+// 每次手动滚动调用一次 --- 设置scroll停止位置
+// proposedContentOffset 滚动停止时point 这个点在左上角
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
     
+    NSLog(@"targetContentOffsetForProposedContentOffset");
+
     // 1.计算collectionView最后停留的位置
     CGRect lastRect ;
     lastRect.origin = proposedContentOffset;
     lastRect.size = self.collectionView.frame.size;
     
-    // 计算屏幕中间的X
+    // 计算contentView在屏幕中间的X
     CGFloat centerX;
     centerX = lastRect.origin.x + self.collectionView.frame.size.width * 0.5;
     
     // 找出“最终”显示的item的attribute 与centerX对比
+    // 返回rect中的cells的布局属性
     NSArray *visibleArray = [self layoutAttributesForElementsInRect:lastRect];
 
     CGFloat adjustOffsetx = CGFLOAT_MAX;
+    
     for (UICollectionViewLayoutAttributes *attribute in visibleArray) {
-
+//        NSLog(@"%@",attribute);
         // 找出距离最近的Item
         if (ABS(attribute.center.x - centerX) < ABS(adjustOffsetx)) {
             adjustOffsetx = attribute.center.x - centerX;
@@ -59,12 +69,14 @@ static const CGFloat HTItemHW = 100;
 }
 
 
-// 2. item放大
+// 2. 设置item的layoutAttributes --- 此方法在滚动时会频繁调用
 // 当bounds改变时“需要”调用此方法
 // 这个方法在一开始就会调用 返回全部item的attribute
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
-
+    
+    NSLog(@"layoutAttributesForElementsInRect");
     // 利用父类返回的Attributes数组数据  修改数据让其放大
+    
     NSArray *array =  [super layoutAttributesForElementsInRect:rect];
     
     // 1.计算显示的的区域
@@ -90,7 +102,7 @@ static const CGFloat HTItemHW = 100;
         
         attribute.transform = CGAffineTransformMakeScale(scale, scale);
     }
-    // 放大效果
+    // 放大效果后有可能有的cell就不在rect中了 需要重新设置
     return array;
 }
 

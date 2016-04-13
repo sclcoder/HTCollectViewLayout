@@ -78,7 +78,7 @@ static NSString *const ID = @"image";
     
     
     UIButton *lineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    lineBtn.frame = CGRectMake(50, 500, 50, 50);
+    lineBtn.frame = CGRectMake(50, 300, 50, 50);
     [lineBtn setTitle:@"线" forState:UIControlStateNormal];
     lineBtn.backgroundColor = [UIColor blueColor];
     lineBtn.tag = 100;
@@ -86,7 +86,7 @@ static NSString *const ID = @"image";
     [self.view addSubview:lineBtn];
 
     UIButton *stackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    stackBtn.frame = CGRectMake(150, 500, 50, 50);
+    stackBtn.frame = CGRectMake(150, 300, 50, 50);
     [stackBtn setTitle:@"堆" forState:UIControlStateNormal];
     stackBtn.backgroundColor = [UIColor blueColor];
     stackBtn.tag = 101;
@@ -98,7 +98,7 @@ static NSString *const ID = @"image";
     UIButton *circleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [circleBtn setTitle:@"圆" forState:UIControlStateNormal];
 
-    circleBtn.frame = CGRectMake(250, 500, 50, 50);
+    circleBtn.frame = CGRectMake(250, 300, 50, 50);
     circleBtn.backgroundColor = [UIColor blueColor];
     circleBtn.tag = 102;
     [circleBtn addTarget:self action:@selector(setCustomLayout:) forControlEvents:UIControlEventTouchUpInside];
@@ -109,7 +109,7 @@ static NSString *const ID = @"image";
     
     
     CGFloat w = self.view.frame.size.width;
-    CGRect rect = CGRectMake(0, 100,w,200);
+    CGRect rect = CGRectMake(0, 0,w,200);
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:self.lineLayout];
     
@@ -117,6 +117,7 @@ static NSString *const ID = @"image";
     collectionView.dataSource = self;
 
     [collectionView registerNib:[UINib nibWithNibName:@"HTCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:ID];
+    
     collectionView.backgroundColor = [UIColor redColor];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
@@ -132,16 +133,16 @@ static NSString *const ID = @"image";
     switch (btn.tag) {
         case 100:
             [self.collectionView setCollectionViewLayout:self.lineLayout animated:YES];
-            self.collectionView.frame = CGRectMake(0, 100, w, 200);
+            self.collectionView.frame = CGRectMake(0, 0, w, 200);
             break;
         case 101:
             [self.collectionView setCollectionViewLayout:self.stackLayout animated:YES];
-            self.collectionView.frame = CGRectMake(0, 100, w, 200);
+            self.collectionView.frame = CGRectMake(0, 0, w, 200);
 
             break;
         case 102:
             [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES];
-            self.collectionView.frame = CGRectMake(0, 100, w, 400);
+            self.collectionView.frame = CGRectMake(0, 0, w, 300);
 
             break;
             

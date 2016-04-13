@@ -27,6 +27,7 @@
 
 
 - (void)setImageName:(NSString *)imageName{
+    // 小技巧  代替 _imageName = imageName
     [_imageName copy];
     self.imageView.image = [UIImage imageNamed:imageName];
 }
