@@ -116,7 +116,9 @@ static const CGFloat HTItemHW = 100;
 }
 
 
-// 1 准备布局
+/**
+ *  只要布局刷新首先调用该方法
+ */
 - (void)prepareLayout{
 
     [super prepareLayout];
@@ -125,9 +127,9 @@ static const CGFloat HTItemHW = 100;
     
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    // 在init设置不准确原因  init方法中ollectionView的frame还没设置
+    // 在layout类的init设置不准确原因  init方法中collectionView的frame还没设置
     CGFloat inset = self.collectionView.frame.size.width / 2 - HTItemHW / 2;
-    
+    // 使用self.sectionInset 而不是 collectionViewInset设置间距 这样会保留colleectionView之前的inset
     self.sectionInset = UIEdgeInsetsMake(0, inset, 0, inset);
     
     self.minimumLineSpacing =  HTItemHW / 2;
