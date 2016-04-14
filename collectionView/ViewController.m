@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HTCollectionViewCell.h"
+#import "HTCollectionViewCellX.h"
 #import "HTLineLayout.h"
 #import "HTCircle.h"
 #import "HTStack.h"
@@ -29,6 +30,7 @@
 @end
 
 static NSString *const ID = @"image";
+static NSString *const IDX = @"text";
 
 @implementation ViewController
 
@@ -117,11 +119,11 @@ static NSString *const ID = @"image";
     collectionView.dataSource = self;
 
     [collectionView registerNib:[UINib nibWithNibName:@"HTCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:ID];
+    [collectionView registerNib:[UINib nibWithNibName:@"HTCollectionViewCellX" bundle:nil] forCellWithReuseIdentifier:IDX];
     
     collectionView.backgroundColor = [UIColor redColor];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
-    self.layout = self.lineLayout;
 }
 
 
@@ -132,17 +134,25 @@ static NSString *const ID = @"image";
     
     switch (btn.tag) {
         case 100:
-            [self.collectionView setCollectionViewLayout:self.lineLayout animated:YES];
+            [self.collectionView setCollectionViewLayout:self.lineLayout animated:NO];
+            self.layout = self.lineLayout;
             self.collectionView.frame = CGRectMake(0, 0, w, 200);
+            [self.collectionView reloadData];
             break;
         case 101:
-            [self.collectionView setCollectionViewLayout:self.stackLayout animated:YES];
+            [self.collectionView setCollectionViewLayout:self.stackLayout animated:NO];
+            self.layout = self.stackLayout;
+
             self.collectionView.frame = CGRectMake(0, 0, w, 200);
+            [self.collectionView reloadData];
 
             break;
         case 102:
-            [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES];
+            [self.collectionView setCollectionViewLayout:self.circleLayout animated:NO];
+            self.layout = self.circleLayout;
+
             self.collectionView.frame = CGRectMake(0, 0, w, 300);
+            [self.collectionView reloadData];
 
             break;
             
@@ -161,12 +171,21 @@ static NSString *const ID = @"image";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (self.layout == self.stackLayout) {
+
+        HTCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+        cell.imageName = self.images[indexPath.item];
+        return cell;
+        
+    } else {
     
-    HTCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+        HTCollectionViewCellX *cellX = [collectionView dequeueReusableCellWithReuseIdentifier:IDX forIndexPath:indexPath];
+        
+        cellX.textName = [NSString stringWithFormat:@"%zd",indexPath.item];
+        return cellX;
+    }
     
-    cell.imageName = self.images[indexPath.item];
     
-    return cell;
 }
 
 #pragma mark - UICollectionViewDelegate

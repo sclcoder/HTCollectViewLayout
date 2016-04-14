@@ -14,6 +14,8 @@
 		E31B7E021B7B50A800B8A9D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31B7E011B7B50A800B8A9D3 /* Images.xcassets */; };
 		E31B7E051B7B50A800B8A9D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31B7E031B7B50A800B8A9D3 /* LaunchScreen.xib */; };
 		E31B7E111B7B50A800B8A9D3 /* collectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E31B7E101B7B50A800B8A9D3 /* collectionViewTests.m */; };
+		E32222ED1CBF946B006A06ED /* HTCollectionViewCellX.m in Sources */ = {isa = PBXBuildFile; fileRef = E32222EB1CBF946B006A06ED /* HTCollectionViewCellX.m */; };
+		E32222EE1CBF946B006A06ED /* HTCollectionViewCellX.xib in Resources */ = {isa = PBXBuildFile; fileRef = E32222EC1CBF946B006A06ED /* HTCollectionViewCellX.xib */; };
 		E3B215991B7C2EC0008C5ED0 /* HTLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B215981B7C2EC0008C5ED0 /* HTLineLayout.m */; };
 		E3B215A01B7C3CFC008C5ED0 /* HTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B2159E1B7C3CFC008C5ED0 /* HTCollectionViewCell.m */; };
 		E3B215A11B7C3CFC008C5ED0 /* HTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B2159F1B7C3CFC008C5ED0 /* HTCollectionViewCell.xib */; };
@@ -45,6 +47,9 @@
 		E31B7E0A1B7B50A800B8A9D3 /* collectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = collectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31B7E0F1B7B50A800B8A9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E31B7E101B7B50A800B8A9D3 /* collectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = collectionViewTests.m; sourceTree = "<group>"; };
+		E32222EA1CBF946B006A06ED /* HTCollectionViewCellX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCollectionViewCellX.h; sourceTree = "<group>"; };
+		E32222EB1CBF946B006A06ED /* HTCollectionViewCellX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCollectionViewCellX.m; sourceTree = "<group>"; };
+		E32222EC1CBF946B006A06ED /* HTCollectionViewCellX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTCollectionViewCellX.xib; sourceTree = "<group>"; };
 		E3B215971B7C2EC0008C5ED0 /* HTLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLineLayout.h; sourceTree = "<group>"; };
 		E3B215981B7C2EC0008C5ED0 /* HTLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLineLayout.m; sourceTree = "<group>"; };
 		E3B2159D1B7C3CFC008C5ED0 /* HTCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTCollectionViewCell.h; path = ../HTCollectionViewCell.h; sourceTree = "<group>"; };
@@ -99,6 +104,9 @@
 				E31B7DF91B7B50A800B8A9D3 /* AppDelegate.m */,
 				E31B7DFB1B7B50A800B8A9D3 /* ViewController.h */,
 				E31B7DFC1B7B50A800B8A9D3 /* ViewController.m */,
+				E32222EA1CBF946B006A06ED /* HTCollectionViewCellX.h */,
+				E32222EB1CBF946B006A06ED /* HTCollectionViewCellX.m */,
+				E32222EC1CBF946B006A06ED /* HTCollectionViewCellX.xib */,
 				E3B2159D1B7C3CFC008C5ED0 /* HTCollectionViewCell.h */,
 				E3B2159E1B7C3CFC008C5ED0 /* HTCollectionViewCell.m */,
 				E3B2159F1B7C3CFC008C5ED0 /* HTCollectionViewCell.xib */,
@@ -226,6 +234,7 @@
 				E31B7E001B7B50A800B8A9D3 /* Main.storyboard in Resources */,
 				E31B7E051B7B50A800B8A9D3 /* LaunchScreen.xib in Resources */,
 				E31B7E021B7B50A800B8A9D3 /* Images.xcassets in Resources */,
+				E32222EE1CBF946B006A06ED /* HTCollectionViewCellX.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +257,7 @@
 				E31B7DF71B7B50A800B8A9D3 /* main.m in Sources */,
 				E3B215AA1B7CA48E008C5ED0 /* HTStack.m in Sources */,
 				E3B215A01B7C3CFC008C5ED0 /* HTCollectionViewCell.m in Sources */,
+				E32222ED1CBF946B006A06ED /* HTCollectionViewCellX.m in Sources */,
 				E3B215991B7C2EC0008C5ED0 /* HTLineLayout.m in Sources */,
 				E3B215A71B7CA1D6008C5ED0 /* HTCircle.m in Sources */,
 			);
