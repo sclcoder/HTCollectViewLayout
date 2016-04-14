@@ -134,26 +134,38 @@ static NSString *const IDX = @"text";
     
     switch (btn.tag) {
         case 100:
-            [self.collectionView setCollectionViewLayout:self.lineLayout animated:NO];
-            self.layout = self.lineLayout;
-            self.collectionView.frame = CGRectMake(0, 0, w, 200);
-            [self.collectionView reloadData];
+        {
+
+            [self.collectionView setCollectionViewLayout:self.lineLayout animated:YES completion:^(BOOL finished) {
+                NSLog(@"-------------");
+                self.layout = self.lineLayout;
+                self.collectionView.frame = CGRectMake(0, 0, w, 200);
+                [self.collectionView reloadData];
+            }];
+        }
+            
             break;
         case 101:
-            [self.collectionView setCollectionViewLayout:self.stackLayout animated:NO];
-            self.layout = self.stackLayout;
-
-            self.collectionView.frame = CGRectMake(0, 0, w, 200);
-            [self.collectionView reloadData];
-
+        {
+            [self.collectionView setCollectionViewLayout:self.stackLayout animated:YES completion:^(BOOL finished) {
+                
+                NSLog(@"-------------==========");
+                self.layout = self.stackLayout;
+                self.collectionView.frame = CGRectMake(0, 0, w, 200);
+                [self.collectionView reloadData];
+            }];
+        }
             break;
         case 102:
-            [self.collectionView setCollectionViewLayout:self.circleLayout animated:NO];
-            self.layout = self.circleLayout;
+        {
 
-            self.collectionView.frame = CGRectMake(0, 0, w, 300);
-            [self.collectionView reloadData];
-
+            [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES completion:^(BOOL finished) {
+                NSLog(@"-------------+++++++++");
+                self.layout = self.circleLayout;
+                self.collectionView.frame = CGRectMake(0, 0, w, 200);
+                [self.collectionView reloadData];
+            }];
+        }
             break;
             
         default:
