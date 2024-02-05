@@ -80,7 +80,7 @@ static NSString *const IDX = @"text";
     
     
     UIButton *lineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    lineBtn.frame = CGRectMake(50, 300, 50, 50);
+    lineBtn.frame = CGRectMake(50, 500, 50, 50);
     [lineBtn setTitle:@"线" forState:UIControlStateNormal];
     lineBtn.backgroundColor = [UIColor blueColor];
     lineBtn.tag = 100;
@@ -88,8 +88,8 @@ static NSString *const IDX = @"text";
     [self.view addSubview:lineBtn];
 
     UIButton *stackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    stackBtn.frame = CGRectMake(150, 300, 50, 50);
-    [stackBtn setTitle:@"堆" forState:UIControlStateNormal];
+    stackBtn.frame = CGRectMake(150, 500, 50, 50);
+    [stackBtn setTitle:@"栈" forState:UIControlStateNormal];
     stackBtn.backgroundColor = [UIColor blueColor];
     stackBtn.tag = 101;
     [stackBtn addTarget:self action:@selector(setCustomLayout:) forControlEvents:UIControlEventTouchUpInside];
@@ -100,7 +100,7 @@ static NSString *const IDX = @"text";
     UIButton *circleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [circleBtn setTitle:@"圆" forState:UIControlStateNormal];
 
-    circleBtn.frame = CGRectMake(250, 300, 50, 50);
+    circleBtn.frame = CGRectMake(250, 500, 50, 50);
     circleBtn.backgroundColor = [UIColor blueColor];
     circleBtn.tag = 102;
     [circleBtn addTarget:self action:@selector(setCustomLayout:) forControlEvents:UIControlEventTouchUpInside];
@@ -111,7 +111,7 @@ static NSString *const IDX = @"text";
     
     
     CGFloat w = self.view.frame.size.width;
-    CGRect rect = CGRectMake(0, 0,w,200);
+    CGRect rect = CGRectMake(0, 0,w,500);
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:self.lineLayout];
     
@@ -139,7 +139,7 @@ static NSString *const IDX = @"text";
             [self.collectionView setCollectionViewLayout:self.lineLayout animated:YES completion:^(BOOL finished) {
                 NSLog(@"-------------");
                 self.layout = self.lineLayout;
-                self.collectionView.frame = CGRectMake(0, 0, w, 200);
+                self.collectionView.frame = CGRectMake(0, 0, w, 400);
                 [self.collectionView reloadData];
             }];
         }
@@ -151,7 +151,7 @@ static NSString *const IDX = @"text";
                 
                 NSLog(@"-------------==========");
                 self.layout = self.stackLayout;
-                self.collectionView.frame = CGRectMake(0, 0, w, 200);
+                self.collectionView.frame = CGRectMake(0, 0, w, 400);
                 [self.collectionView reloadData];
             }];
         }
@@ -162,7 +162,7 @@ static NSString *const IDX = @"text";
             [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES completion:^(BOOL finished) {
                 NSLog(@"-------------+++++++++");
                 self.layout = self.circleLayout;
-                self.collectionView.frame = CGRectMake(0, 0, w, 200);
+                self.collectionView.frame = CGRectMake(0, 0, w, 400);
                 [self.collectionView reloadData];
             }];
         }
